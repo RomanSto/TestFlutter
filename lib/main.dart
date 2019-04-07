@@ -7,7 +7,7 @@ void main() {
     theme: ThemeData(
       primarySwatch: Colors.blue,
     ),
-    home: Test("Hello Solid Software"),
+    home: Test("Hello Solid Software", ""),
   ));
 }
 
