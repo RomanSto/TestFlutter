@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:test_task_flutter_app/widgets_test/my_form.dart';
 
-class Content extends StatefulWidget{
+class Content extends StatefulWidget {
   String _centerText;
-
 
   Content(this._centerText);
 
@@ -13,7 +13,6 @@ class Content extends StatefulWidget{
 class _ContentState extends State<Content> {
   String _centerText;
   int _indexImage = 0;
-
 
   _ContentState(this._centerText);
 
@@ -37,19 +36,19 @@ class _ContentState extends State<Content> {
     // TODO: implement build
     return new Center(
       child: new Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          new Text(_centerText,
-              style:
-              TextStyle(fontSize: 25, fontStyle: FontStyle.italic)),
-          new Image.network(
+          MyForm(),
+          SizedBox(height: 30.0,),
+          Text(_centerText,
+              style: TextStyle(fontSize: 25, fontStyle: FontStyle.italic)),
+          Image.network(
             _urlList[_indexImage],
             width: 250,
             height: 250,
           ),
-          new MaterialButton(
+          MaterialButton(
             onPressed: _changeImageUri,
-            child: new Text("Click Me"),
+            child: Text("Click Me"),
             color: Colors.deepOrange,
             textColor: Colors.white,
             elevation: 8,
@@ -58,5 +57,4 @@ class _ContentState extends State<Content> {
       ),
     );
   }
-
 }
